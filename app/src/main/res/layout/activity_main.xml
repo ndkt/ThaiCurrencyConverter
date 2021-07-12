@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <Spinner
+            android:id="@+id/spinnerCurrencyConvertTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:entries="@array/currencies"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTo"
+            app:layout_constraintStart_toEndOf="@+id/tvTo"
+            app:layout_constraintTop_toTopOf="@+id/tvTo" />
+
+
+        <TextView
+            android:id="@+id/tvConversionFactor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conversion_factor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/icon_original_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_currency"
+            app:layout_constraintBottom_toBottomOf="@id/currency_origin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/currency_origin" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/currency_origin"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/amount"
+            app:layout_constraintStart_toEndOf="@id/icon_original_amount"
+            app:layout_constraintTop_toBottomOf="@id/tvConversionFactor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCurrencyOrigin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Spinner
+            android:id="@+id/spinnerCurrencyConvertFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:entries="@array/currencies"
+            app:layout_constraintBottom_toBottomOf="@+id/currency_origin"
+            app:layout_constraintStart_toEndOf="@+id/currency_origin"
+            app:layout_constraintTop_toTopOf="@id/currency_origin" />
+
+        <ImageView
+            android:id="@+id/icon_convertButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_convert"
+            app:layout_constraintBottom_toBottomOf="@+id/convert_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/convert_button" />
+
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/convert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_convertButton"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerCurrencyConvertTo" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            style="@style/Widget.CurrencyConverter.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/convert_button"
+            tools:text="Amount: $1" />
+
+        <ImageView
+            android:id="@+id/icon_convertTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_money"
+            app:layout_constraintBottom_toBottomOf="@id/tvTo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTo" />
+
+        <TextView
+            android:id="@+id/tvTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/to"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@id/icon_convertTo"
+            app:layout_constraintTop_toBottomOf="@+id/currency_origin" />
+
+        <TextView
+            android:id="@+id/tvMadeWithMaterialDesign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/made_with_material_design"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvResult" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

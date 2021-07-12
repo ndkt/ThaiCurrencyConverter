@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string-array name="currencies">
+        <item>USD</item>
+        <item>BAHT</item>
+    </string-array>
+
+    <string-array name="currenciesOrigin">
+        <item>USD</item>
+        <item>BAHT</item>
+    </string-array>
+    <string name="final_amount">Amount: %s</string>
+    <string name="convert">Convert</string>
+    <string name="to">TO</string>
+    <string name="amount">Amount</string>
+    <string name="made_with_material_design">Made with Material Design</string>
+    <string name="conversion_factor">Conversion Factor: 1 USD = 31.41 BAHT</string>
+</resources>
